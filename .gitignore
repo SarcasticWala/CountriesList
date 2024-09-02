@@ -1,0 +1,9 @@
+# Ignore node_modules directory
+node_modules/
+# Other entries...
+# Parcel cache files
+.parcel-cache/
+.cache/
+
+# Production build files (optional, if you're building for production)
+dist/
