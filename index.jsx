@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client'
+import Contact from './components/Contact'
 import App from './App'
 import { createBrowserRouter, RouterProvider,} from "react-router-dom";
 const router = createBrowserRouter([
@@ -8,7 +9,7 @@ const router = createBrowserRouter([
     },
     {
         path:'/contact',
-        element:<Contact/>,
+        element: <Contact />,
     },
   ]);
 const root = createRoot(document.querySelector('#root'))
