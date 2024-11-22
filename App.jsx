@@ -1,23 +1,18 @@
+import Header from './components/Header'
+import { Outlet } from 'react-router-dom'
 
-import SelectMenu from './components/SelectMenu'
-import CountriesList from './components/CountriesList'
 import './App.css'
-import { useState } from "react"
-const App=()=> {
-  const [query,setQuery]=useState('')
+import { useState } from 'react'
+
+const App = () => {
+  const [isDark, setIsDark] = useState(JSON.parse(localStorage.getItem('isDarkMode')))
 
   return (
     <>
-  <Header />
-      <main>
-        <div className="search-filter-container">
-          <SearchBar setQuery={setQuery}/>
-          <SelectMenu />
-        </div>
-
-        {query === 'unmount' ? '' : <CountriesList query={query}/>}
-      </main>
+      <Header theme={[isDark, setIsDark]} />
+      <Outlet context={[isDark, setIsDark]} />
     </>
   )
 }
+
 export default App
