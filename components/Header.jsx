@@ -1,11 +1,7 @@
-export default function Header({theme}) {
-  const [isDark, setIsDark] = theme
+import { useTheme } from "../hooks/useTheme"
 
-  // if(isDark) {
-  //   document.body.classList.add('dark')
-  // } else {
-  //   document.body.classList.remove('dark')
-  // }
+export default function Header() {
+  const [isDark, setIsDark] =  useTheme()
   
   return (
     <header className={`header-container ${isDark? 'dark': ''}`}>
